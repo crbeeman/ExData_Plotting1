@@ -1,3 +1,6 @@
+library(dplyr)
+library(lubridate)
+
 data3 <- read.table("household_power_consumption.txt", sep = ";", skip = 66637, nrows = 2880)
 data3 <- data3 %>% mutate(V1 = as.POSIXct(dmy_hms(as.character(paste(V1, V2)))),
                V7 = as.numeric(as.character(V7)),
